@@ -1,1 +1,27 @@
 # This is the lookdown construction page
+Let us discuss an example before moving on to the theory. Let us consider the Fleming-Viot process on $\R$ with mutation. 
+    We have $N$ particles living on $\R$, with locations $(Y_1(t),...,Y_N(t)$ at time $t=0$. We fix a $\gamma\in[0,1]$.
+  </p>
+  <p>
+    The dynamics evolve as follows: at rate $1$ for each pair of particles $(i,j)$, individual with index $j$ dies 
+    and individual with index $i$ has an offspring.
+    With probability $1-\gamma$ the offspring of $i$ takes on the same location as $i$.
+    With probability $\gamma$ the offspring of $i$ mutates following a kernel $\eta_N(y_i,dz)$ which we usually consider to be the kernel of $y_i$
+    plus some noise which is normally distributed.
+  </p>
+  <p>
+    We can explicitly write down a generator for this process which takes values in $\R^N$. Define for $i\neq j$:
+    $$Q_{i,j}^Nf(x_1,...,x_N)=(1-\gamma)f(\theta_{i,j}(y_1,...,y_N))+\gamma\int f(y_1,...,y_{j-1},z,y_{j+1},...,y_N)\eta_N(y_i,dz)-f(y)$$
+    where $\theta_{i,j}(y)\in\R^N$ is obtained by replacing $y_j$ by $y_i$.
+  </p>
+  <p>
+    Then the process has generator:
+    $$C_Nf=\frac{1}{2}\sum_{i\neq j}Q_{i,j}f$$
+  </p>
+  <p>
+    We note that we will need that the following converges:
+    $$B^Ng(x)=\frac{N\gamma}{2}\int g(z)-g(x)\eta_N(x,dz)$$
+    This is essentially to ensure that the generator converges.
+  </p>
+  <p>
+    Now that we are acquainted with our process
